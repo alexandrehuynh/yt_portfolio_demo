@@ -19,8 +19,8 @@ camera.position.setX(-3);
 renderer.render(scene, camera);
 
 // Torus
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0x6e9fe0 });
+const geometry = new THREE.TorusGeometry(10, 2, 16, 100);
+const material = new THREE.MeshStandardMaterial({ color: 0x7C8D94 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
@@ -57,7 +57,7 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Background
-const spaceTexture = new THREE.TextureLoader().load('enterthegate.jpg');
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
 
 // Avatar
