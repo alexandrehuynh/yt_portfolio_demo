@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // Setup
-
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -20,7 +19,6 @@ camera.position.setX(-3);
 renderer.render(scene, camera);
 
 // Torus
-
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
 const torus = new THREE.Mesh(geometry, material);
@@ -59,12 +57,10 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Background
-
 const spaceTexture = new THREE.TextureLoader().load('deepspace.jpg');
 scene.background = spaceTexture;
 
 // Avatar
-
 const jeffTexture = new THREE.TextureLoader().load('closeup.jpg');
 
 const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
@@ -72,7 +68,6 @@ const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicM
 scene.add(jeff);
 
 // Moon
-
 const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
@@ -93,7 +88,6 @@ jeff.position.z = -5;
 jeff.position.x = 2;
 
 // Scroll Animation
-
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
   moon.rotation.x += 0.05;
@@ -112,7 +106,6 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 // Animation Loop
-
 function animate() {
   requestAnimationFrame(animate);
 
